@@ -11,7 +11,26 @@ $(document).ready(function() {
     $character.y = 0;
     var keyObj = {d: false, a: false, space: false};
 
+  //Set character Position ---
+  var $height = getCSSValue($character, "height");
+  $character.css("top", 400 - $height);
+  //Set character Position ---
   //-----Detect key presses ----
+
+  //Fly -----------------
+  $(document).on('keypress', function(key) {
+    var curTop = getCSSValue($character, "top");
+    if (key.key === 'w') {
+      $character.css("top", curTop - 5);
+      $character.y += 5;
+    }
+    if (key.key === 's') {
+      $character.css("top", curTop + 5);
+      $character.y -= 5;
+    }
+  });
+  //Fly -------------
+
   //Detect key down
   $(document).on('keypress', function(key) {
     if (key.key === 'd') {

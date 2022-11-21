@@ -9,16 +9,16 @@ $(document).ready(function() {
   //---Value Getter---
 
   //---Enemy Controller ---
-  var enemyYOffset = getCSSValue($(".enemy"), "height");
-  var enemyHeight = getCSSValue($(".enemy"), "height")
-
+  var enemyHeight = getCSSValue($(".enemy"), "height");
+  var elementYOffset = enemyHeight + (getCSSValue($("#character"), 'height') - 20);
+  var oldElementYOffset = elementYOffset;
   window.enemies = [];
   var enemyFunction = window['enemy'];
   var spawnEnemy = function() {
-    var enemy = new enemyFunction(enemyYOffset);
+    var enemy = new enemyFunction(elementYOffset);
     enemies.push(enemy);
     enemy.$node.appendTo("#characterArea")
-    enemyYOffset += enemyHeight;
+    elementYOffset += enemyHeight;
   }
   //---Enemy Controller ---
   $("#spawnEnemy").on('mousedown', function() {
@@ -37,25 +37,16 @@ $(document).ready(function() {
     enemies.forEach(function (curEnemy) {
       if ($character.x + characterWidth >= curEnemy.x && $character.x <= curEnemy.x + enemyWidth) {
         if ($character.y <= curEnemy.y + enemyHeight && $character.y + characterHeight >= curEnemy.y) {
-          console.log('Character Bottom ' + (curEnemy.y + enemyHeight));
+          location.reload();
+          console.log('Collision!');
         }
       }
     });
-    setTimeout(detectCollision, .5);
+    setTimeout(detectCollision, 5);
   }
   //Make sure that character is created
   setTimeout(detectCollision, 10);
 
 
 })
-/*
-Collision Box:
-X = 0;
-Y = 0;
-Width = 5;
-Right Side Collision: If X + width === Enemy X  ]
-Left Side Collision: If X === Enemy X + Width
-Top Side Collision: If Y + Height === Enemy Y
-Bottom Side Collision if Y === Enemy Y + Height
 
-*/
