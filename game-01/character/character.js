@@ -1,6 +1,8 @@
 $(document).ready(function() {
   //Set jump parameters
+  var moveSpeed = 5;
   var jumpSpeed = 10;
+  var jumpHeight = 50;
   var topOfJumpReached = false;
   var jumpFinished = true;
   //Set character parameters
@@ -41,12 +43,12 @@ $(document).ready(function() {
   var move = function() {
     var $curLeft = getCSSValue($character, 'left');
     if (keyObj['d'] === true && $character.x < 980 && keyObj['a'] === false) {
-      $character.css('left', $curLeft + 10);
-      $character.x += 10;
+      $character.css('left', $curLeft + moveSpeed);
+      $character.x += moveSpeed;
     }
     if (keyObj['a'] === true && $character.x > 0 && keyObj['d'] === false) {
-      $character.css('left', $curLeft - 10)
-      $character.x -= 10;
+      $character.css('left', $curLeft - moveSpeed)
+      $character.x -= moveSpeed;
     }
     if (keyObj['space'] === true) {
       if (jumpFinished === true) {
@@ -61,7 +63,7 @@ $(document).ready(function() {
   //Jump character
   var jump = function() {
     $curTop = getCSSValue($character, 'top');
-    if ($character.y < 50 && topOfJumpReached !== true) {
+    if ($character.y < jumpHeight && topOfJumpReached !== true) {
       $character.css('top', $curTop - jumpSpeed);
       $character.y += jumpSpeed;
       setTimeout(jump, 30);
