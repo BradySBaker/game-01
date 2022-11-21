@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>game-01</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="../enemy/enemy.js"></script>
+      <script src="../init.js"></script>
+      <script src="../character/character.js"></script>
+  </head>
+
+  <body>
+    <div id="game">
+      <div id="score"></div>
+      <!-- Don't put anything above characterArea in the game div [offset will be messed up]!!!-->
+      <div id ="characterArea">
+        <div id="character"></div>
+        <!-- Don't put anything under character in the game div [offset will be messed up]!!!-->
+      </div>
+      <button id="spawnEnemy">Spawn Enemy</button>
+    </div>
+    <div id = "placeholder" class="enemy"></div>
+  </body>
+
+  </html>
