@@ -11,7 +11,7 @@ $(document).ready(function() {
     this.move();
   };
   enemy.prototype.setOriginPosition = function () {
-    this.$node.css('top', 380 - this.offset);
+    this.$node.css('top', 315 - this.offset);
     this.$node.css('left', 980);
   };
   enemy.prototype.move = function () {

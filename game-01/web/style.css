@@ -12,10 +12,14 @@
 }
 #character{
   position: relative;
-  width: 20px;
-  height: 40px;
+  width: 16px;
+  height: 68px;
   top: 380px;
-  background-color: black;
+  background-image: url(../assets/idleAnimation.gif);
+  /*background-color: black;*/
+  background-position: -11px;
+  background-repeat: no-repeat;
+  background-size: 40px;
 }
 .enemy{
   position: relative;
@@ -36,9 +40,32 @@ button:hover{
 }
 #spawnEnemy{
   position: relative;
-  top: 0px;
+  top: -30px;
   left: 880px;
 }
 #placeholder{
   background-color: white;
+}
+#start{
+  width: 100px;
+  height: 40px;
+  position: relative;
+  top: 45%;
+  left: 45%;
+}
+#gameOver{
+  font-weight: bold;
+  color: red;
+  font-size: 100px;
+  position: relative;
+  top: -20px;
+  left: 25%;
+}
+#score{
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(184, 212, 29);
+  position: relative;
+  top: -15px;
+  left: 85%;
 }
