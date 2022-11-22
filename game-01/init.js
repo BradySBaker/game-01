@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  var charWidthOffset = 8;
   //---Value Getter---
   window.getCSSValue = function(element, value) {
     $value = element.css(value);
@@ -68,7 +69,7 @@ $(document).ready(function() {
 
   //---Collision Detection -------------------------------
   var characterHeight = getCSSValue($("#character"), "height");
-  var characterWidth = getCSSValue($("#character"), "width");
+  var characterWidth = getCSSValue($("#character"), "width") - charWidthOffset;
   var enemyWidth = getCSSValue($(".enemy"), "width");
 
   var detectCollision = function() {

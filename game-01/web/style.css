@@ -12,14 +12,14 @@
 }
 #character{
   position: relative;
-  width: 16px;
-  height: 68px;
+  width: 42px; /*16*/
+  height: 120px; /*68*/
   top: 380px;
-  background-image: url(../assets/idleAnimation.gif);
+  background-image: url(../assets/Character/moving-animation.gif);
   /*background-color: black;*/
-  background-position: -11px;
+  background-position: -11px 1px;
   background-repeat: no-repeat;
-  background-size: 40px;
+  background-size: 60px;
 }
 .enemy{
   position: relative;
