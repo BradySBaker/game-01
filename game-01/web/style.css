@@ -15,6 +15,7 @@
   width: 42px; /*16*/
   height: 120px; /*68*/
   top: 380px;
+  transform: scaleX(1);
   background-image: url(../assets/Character/moving-animation.gif);
   /*background-color: black;*/
   background-position: -11px 1px;

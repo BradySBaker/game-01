@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Mocha Spec Runner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/7.2.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/7.2.0/mocha.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/9.2.1/sinon.js"></script>
+  <script>
+    mocha.setup('bdd');
+    window.expect = chai.expect;
+    $(function() {
+      window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
+    });
+  </script>
+  <script src="../../enemy/enemy.js"></script>
+  <script src="../../init.js"></script>
+   <script src="../../character/character.js"></script>
+  <script src="spec.js"></script>
+</head>
+<body>
+
+<div id="mocha"></div>
+
+    <!-- Prevents errors -->
+<div id="game">
+  <button id="start">Start</button>
+  <div id="score">Score:</div>
+  <div id ="characterArea">
+    <div id="character"></div>
+  </div>
+  <button id="spawnEnemy">Spawn Enemy</button>
+</div>
+<div id = "placeholder" class="enemy"></div>
+    <!-- Prevents errors -->
+</body>
+</html>

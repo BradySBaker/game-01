@@ -1,5 +1,6 @@
 $(document).ready(function() {
   //Set jump parameters
+  var imageDirection = 'forward';
   var jumpSpeed = 10;
   var jumpHeight = 50;
   var topOfJumpReached = false;
@@ -35,9 +36,19 @@ $(document).ready(function() {
   //Detect key down
   $(document).on('keypress', function(key) {
     if (key.key === 'd') {
+      //Flip character
+      if (imageDirection !== 'forward') {
+        $character.css('transform', 'scaleX(1)')
+        imageDirection = 'forward';
+      }
       keyObj['d'] = true;
     }
     if (key.key === 'a') {
+      //Flip character
+      if (imageDirection !== 'backward') {
+        $character.css('transform', 'scaleX(-1)')
+        imageDirection = 'backward'
+      }
       keyObj['a'] = true;
     }
     if (key.key === ' ') {
@@ -57,7 +68,6 @@ $(document).ready(function() {
     }
   });
   //-----Detect key presses ----
-
 
   //-----Move character -----
   var move = function() {
