@@ -46,7 +46,7 @@ button:hover{
 #spawnEnemy{
   position: relative;
   top: -30px;
-  left: 880px;
+  left: -2000px;
 }
 #placeholder{
   background-color: white;
