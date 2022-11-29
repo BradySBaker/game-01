@@ -1,4 +1,5 @@
 #game {
+  margin: auto;
   background-image: url(../assets/backdrop.png);
   width: 1000px;
   height: 500px;
@@ -68,7 +69,7 @@ button:hover{
 #score{
   font-size: 30px;
   font-weight: bold;
-  color: rgb(184, 212, 29);
+  color: rgb(228, 255, 131);
   position: relative;
   top: -15px;
   left: 85%;
