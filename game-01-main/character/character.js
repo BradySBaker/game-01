@@ -17,7 +17,8 @@ $(document).ready(function() {
   var $height = getCSSValue($character, "height");
   $character.css("top", 335 - $height);
   //Set character Position ---
-  //-----Detect key presses ----
+
+  //-----Detect key presses -------------------------
 
   //Fly -----------------
   $(document).on('keypress', function(key) {
@@ -67,7 +68,7 @@ $(document).ready(function() {
       keyObj['space'] = false;
     }
   });
-  //-----Detect key presses ----
+  //-----Detect key presses -------------------
 
   //-----Move character -----
   var move = function() {
@@ -120,4 +121,37 @@ $(document).ready(function() {
   var switchAnimation = function(url) {
     $character.css('background-image' , 'url("' + url + '"' + ')');
   }
+
+
+  //Detect mobile control down ------
+  $('#upButton').on('mousedown', function() {
+    keyObj['space'] = true;
+  });
+  $('#leftButton').on('mousedown', function() {
+    if (imageDirection !== 'backward') {
+      $character.css('transform', 'scaleX(-1)')
+      imageDirection = 'backward'
+    }
+    keyObj['a'] = true;
+  });
+  $('#rightButton').on('mousedown', function() {
+    if (imageDirection !== 'forward') {
+      $character.css('transform', 'scaleX(1)')
+      imageDirection = 'forward';
+    }
+    keyObj['d'] = true;
+  });
+  //Detect mobile control down ------
+
+  //Detect mobile control up ------
+  $('#upButton').on('mouseup', function() {
+    keyObj['space'] = false;
+  });
+  $('#leftButton').on('mouseup', function() {
+    keyObj['a'] = false;
+  });
+  $('#rightButton').on('mouseup', function() {
+    keyObj['d'] = false;
+  });
+  //Detect mobile control up ------
 });

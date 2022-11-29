@@ -73,3 +73,28 @@ button:hover{
   top: -15px;
   left: 85%;
 }
+.controls{
+  position: relative;
+  background-image: url(../assets/arrow.png);
+  background-position: -90px;
+  background-size: 100px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+.controls:hover{
+  background-color: red;
+}
+#upButton{
+  left: 45%;
+  transform: rotate(-90deg);
+}
+#leftButton{
+  float: left;
+  transform: rotate(-180deg);
+  left: 30%;
+}
+#rightButton{
+  left: 60%;
+}
