@@ -125,9 +125,11 @@ $(document).ready(function() {
 
   //Detect mobile control down ------
   $('#upButton').on('touchstart', function() {
+    $('#upButton').css('background-color', 'red');
     keyObj['space'] = true;
   });
   $('#leftButton').on('touchstart', function() {
+    $('#leftButton').css('background-color', 'red');
     if (imageDirection !== 'backward') {
       $character.css('transform', 'scaleX(-1)')
       imageDirection = 'backward'
@@ -135,6 +137,7 @@ $(document).ready(function() {
     keyObj['a'] = true;
   });
   $('#rightButton').on('touchstart', function() {
+    $('#rightButton').css('background-color', 'red');
     if (imageDirection !== 'forward') {
       $character.css('transform', 'scaleX(1)')
       imageDirection = 'forward';
@@ -145,12 +148,15 @@ $(document).ready(function() {
 
   //Detect mobile control up ------
   $('#upButton').on('touchend', function() {
+    $('#upButton').css('background-color', '');
     keyObj['space'] = false;
   });
   $('#leftButton').on('touchend', function() {
+    $('#leftButton').css('background-color', '');
     keyObj['a'] = false;
   });
   $('#rightButton').on('touchend', function() {
+    $('#rightButton').css('background-color', '');
     keyObj['d'] = false;
   });
   //Detect mobile control up ------
