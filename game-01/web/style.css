@@ -24,11 +24,14 @@
 }
 .enemy{
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 25px;
   left: 0px;
   top: 0px; /*Offset by 20px*/
-  background-color: rgb(255, 0, 0);
+  background-image: url(../assets/poop.png);
+  /*background-color: red;*/
+  background-size: 43px;
+  background-position: -6px -9px;
 }
 button{
   font-weight: bold;

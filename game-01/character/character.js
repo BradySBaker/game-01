@@ -1,8 +1,8 @@
 $(document).ready(function() {
   //Set jump parameters
   var imageDirection = 'forward';
-  var jumpSpeed = 10;
-  var jumpHeight = 50;
+  var jumpSpeed = 15;
+  var jumpHeight = 100;
   var topOfJumpReached = false;
   var jumpFinished = true;
   //Set character parameters
@@ -82,7 +82,10 @@ $(document).ready(function() {
         $character.x -= $character.moveSpeed;
       }
       if (keyObj['space'] === true) {
+        if (jumpFinished === false) {}
         if (jumpFinished === true) {
+          switchAnimation('../assets/Character/jump-animation.gif');
+          setTimeout(function() {switchAnimation('../assets/Character/idle-animation.gif')}, 210);
           jumpFinished = false;
           topOfJumpReached = false;
           jump();
@@ -95,6 +98,7 @@ $(document).ready(function() {
   //Jump character
   var jump = function() {
     if ($character.stopMovement !== true) {
+      //Play Jump Animation
       $curTop = getCSSValue($character, 'top');
       if ($character.y < jumpHeight && topOfJumpReached !== true) {
         $character.css('top', $curTop - jumpSpeed);
@@ -106,11 +110,14 @@ $(document).ready(function() {
         $character.y -= jumpSpeed;
         setTimeout(jump, 30);
       } else {
+        switchAnimation('../assets/Character/moving-animation.gif');
         jumpFinished = true;
       }
     }
   }
   //-----Move character -----
 
-
+  var switchAnimation = function(url) {
+    $character.css('background-image' , 'url("' + url + '"' + ')');
+  }
 });

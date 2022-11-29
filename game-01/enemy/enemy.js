@@ -5,7 +5,7 @@ $(document).ready(function() {
     this.x = 980;
     this.y = 0;
     this.direction = 'right';
-    this.moveSpeed = moveSpeed === undefined ? 14 : moveSpeed; //Has to be a factor of 980
+    this.moveSpeed = moveSpeed === undefined ? 10 : moveSpeed; //Has to be a factor of 980
     this.respawnTime = Math.floor(Math.random() * (100-50) + 50);
     this.setOriginPosition();
     this.move();

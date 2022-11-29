@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  var charWidthOffset = 8;
+  var charWidthOffset = 12;
   //---Value Getter---
-  window.getCSSValue = function(element, value) {
-    $value = element.css(value);
+  window.getCSSValue = function(element, value, value2) {
+      $value = element.css(value);
     $value = $value.slice(0, $value.length - 2);
     $value = Number($value);
     return $value;
@@ -34,6 +34,7 @@ $(document).ready(function() {
   //---Menu Controller--
 
   //---Enemy Controller ---
+  $(".enemy").hide();
   var enemyHeight = getCSSValue($(".enemy"), "height");
   var elementYOffset = enemyHeight + (getCSSValue($("#character"), 'height') - 20);
   var oldElementYOffset = elementYOffset;
@@ -70,7 +71,7 @@ $(document).ready(function() {
   //---Collision Detection -------------------------------
   var characterHeight = getCSSValue($("#character"), "height");
   var characterWidth = getCSSValue($("#character"), "width") - charWidthOffset;
-  var enemyWidth = getCSSValue($(".enemy"), "width");
+  var enemyWidth = getCSSValue($(".enemy"), "width") - charWidthOffset;
 
   var detectCollision = function() {
     if (dead === false) {
@@ -80,6 +81,9 @@ $(document).ready(function() {
             enemies.forEach(function (enemyToBeStopped) {
               enemyToBeStopped.moveSpeed = 0;
             });
+            //Stop background
+            $('#game').css('animation-play-state', 'paused');
+            //Stop background
             $character.stopMovement = true;
             dead = true;
             $("#start").css("left", "45%");
