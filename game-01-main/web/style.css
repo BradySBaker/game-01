@@ -83,9 +83,6 @@ button:hover{
   width: 100px;
   height: 100px;
 }
-.controls:hover{
-  background-color: red;
-}
 #upButton{
   left: 45%;
   transform: rotate(-90deg);
