@@ -124,17 +124,17 @@ $(document).ready(function() {
 
 
   //Detect mobile control down ------
-  $('#upButton').on('mousedown', function() {
+  $('#upButton').on('touchstart', function() {
     keyObj['space'] = true;
   });
-  $('#leftButton').on('mousedown', function() {
+  $('#leftButton').on('touchstart', function() {
     if (imageDirection !== 'backward') {
       $character.css('transform', 'scaleX(-1)')
       imageDirection = 'backward'
     }
     keyObj['a'] = true;
   });
-  $('#rightButton').on('mousedown', function() {
+  $('#rightButton').on('touchstart', function() {
     if (imageDirection !== 'forward') {
       $character.css('transform', 'scaleX(1)')
       imageDirection = 'forward';
@@ -144,13 +144,13 @@ $(document).ready(function() {
   //Detect mobile control down ------
 
   //Detect mobile control up ------
-  $('#upButton').on('mouseup', function() {
+  $('#upButton').on('touchend', function() {
     keyObj['space'] = false;
   });
-  $('#leftButton').on('mouseup', function() {
+  $('#leftButton').on('touchend', function() {
     keyObj['a'] = false;
   });
-  $('#rightButton').on('mouseup', function() {
+  $('#rightButton').on('touchend', function() {
     keyObj['d'] = false;
   });
   //Detect mobile control up ------
